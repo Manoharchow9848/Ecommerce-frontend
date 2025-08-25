@@ -24,7 +24,7 @@ export default function Home() {
    
      fetchFeaturedProducts();
      
-  }, [checkAuth]);
+  }, [checkAuth,fetchFeaturedProducts]);
 
   if (isCheckingAuth) {
     return (
