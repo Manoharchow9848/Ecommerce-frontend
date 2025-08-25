@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import { Toaster } from "react-hot-toast";
 import Header from "@/components/Header";
 const geistSans = Geist({
@@ -21,11 +22,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+       
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+         <Script
+          src="https://sdk.cashfree.com/js/v3/cashfree.js"
+          strategy="afterInteractive"
+        />
         <Header />
       <Toaster position="top-right" />
         {children}
