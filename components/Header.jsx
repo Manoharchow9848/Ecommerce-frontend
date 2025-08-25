@@ -32,14 +32,10 @@ const Header = () => {
             >
               Home
             </Link>
-            <Link
-              href={"/orders"}
-              className="text-gray-300 hover:text-emerald-400 transition duration-300 ease-in-out"
-            >
-              My Orders
-            </Link>
+           
 
             {isAuthenticated && (
+              
               <Link
                 href={"/cart"}
                 className="relative group text-gray-300 hover:text-emerald-400 transition duration-300 ease-in-out"
@@ -50,6 +46,16 @@ const Header = () => {
                 />
                 <span className="hidden sm:inline">Cart</span>
               </Link>
+
+              
+            )}
+            {isAuthenticated && (
+               <Link
+              href={"/orders"}
+              className="text-gray-300 hover:text-emerald-400 transition duration-300 ease-in-out"
+            >
+              My Orders
+            </Link>
             )}
 
             {authUser?.role === "admin" && (
